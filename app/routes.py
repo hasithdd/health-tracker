@@ -1,9 +1,9 @@
 from flask import render_template, flash, redirect, url_for, request
 from flask_login import current_user, login_user, logout_user, login_required
-from werkzeug import URL  # Update the import statement
 from app import app, db
-from app.forms import LoginForm
-from app.models import User
+from app.forms import LoginForm, InputDataForm, GoalSettingsForm  # Add imports for form classes
+from app.models import User, HealthData  # Add import for HealthData model
+from werkzeug import URL
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
