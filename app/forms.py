@@ -33,5 +33,4 @@ class InputDataForm(FlaskForm):
     submit = SubmitField('Submit')
 
 class GoalSettingsForm(FlaskForm):
-    # Define goal settings fields
     submit = SubmitField('Save Changes')
