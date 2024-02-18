@@ -1,6 +1,6 @@
 from flask import render_template, flash, redirect, url_for, request
 from flask_login import current_user, login_user, logout_user, login_required
-from werkzeug.utils import url_parse  # Modify the import statement
+from werkzeug.urls import url_parse
 from app import app, db
 from app.forms import LoginForm, InputDataForm, GoalSettingsForm
 from app.models import User, HealthData
