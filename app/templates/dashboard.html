@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Health Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Dashboard</h1>
+        <p>Welcome, {{ current_user.username }}!</p>
+        <p><a href="{{ url_for('input_data') }}">Input Health Data</a></p>
+        <p><a href="{{ url_for('goal_settings') }}">Goal Settings</a></p>
+        <h2>Health Data</h2>
+        <table>
+            <tr>
+                <th>Steps</th>
+                <th>Sleep Hours</th>
+                <th>Heart Rate</th>
+                <th>Timestamp</th>
+            </tr>
+            {% for data in health_data %}
+            <tr>
+                <td>{{ data.steps }}</td>
+                <td>{{ data.sleep_hours }}</td>
+                <td>{{ data.heart_rate }}</td>
+                <td>{{ data.timestamp }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

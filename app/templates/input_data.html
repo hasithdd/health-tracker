@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Health Data - Health Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Input Health Data</h1>
+        <form method="post">
+            {{ form.hidden_tag() }}
+            <p>{{ form.steps.label }}<br>{{ form.steps(size=32) }}</p>
+            <p>{{ form.sleep_hours.label }}<br>{{ form.sleep_hours(size=32) }}</p>
+            <p>{{ form.heart_rate.label }}<br>{{ form.heart_rate(size=32) }}</p>
+            <p>{{ form.submit() }}</p>
+        </form>
+    </div>
+</body>
+</html>
